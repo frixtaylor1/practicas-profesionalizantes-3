@@ -24,8 +24,8 @@ services:
       - \"3306:3306\"' > docker-compose.yml
 
 echo "yml file created to setup mariadb in docker"
-
-sudo docker-compose up -d "" > docker_mariadb_installer.sh 
+ 
+sudo docker-compose up -d """ > docker_mariadb_installer.sh 
 
 sudo chmod +x ./docker_mariadb_installer.sh 
 
