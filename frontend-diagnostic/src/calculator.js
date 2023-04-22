@@ -4,12 +4,9 @@ const equal = document.getElementById("equal");
 
 let btt = document.querySelectorAll('.btt');
 
-let aToken = '';
-
 btt.forEach(function(token){
   token.addEventListener('click', function() {
-    aToken = this.value;
-    display.value += aToken;
+    display.value += this.value;
     console.log(this.value)
   });
 })
