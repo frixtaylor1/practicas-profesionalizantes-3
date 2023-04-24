@@ -18,10 +18,14 @@ services:
     container_name: mariadb_isft
     environment:
       MYSQL_ROOT_PASSWORD: isft
+      MYSQL_DATABASE: isft
     volumes:
       - ./data:/var/lib/mysql
-    ports:
-      - \"3306:3306\"' > docker-compose.yml
+  adminer:
+      image: adminer
+      restart: always
+      ports:
+          - 8080:8080' > docker-compose.yml
 
 echo "yml file created to setup mariadb in docker"
  
