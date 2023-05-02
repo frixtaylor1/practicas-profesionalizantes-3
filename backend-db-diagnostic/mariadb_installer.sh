@@ -10,7 +10,7 @@ docker --version
 
 echo "#!/bin/bash
 
-echo 'version: \"'3.9'\"
+echo 'version: "'"3.9"'"
 
 services:
   db:
@@ -21,11 +21,28 @@ services:
       MYSQL_DATABASE: isft
     volumes:
       - ./data:/var/lib/mysql
+
   adminer:
-      image: adminer
-      restart: always
-      ports:
-          - 8080:8080' > docker-compose.yml
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+  api:
+    image: node:latest
+    container_name: node_api
+    depends_on:
+      - db
+    volumes:
+      - ./api:/app
+    environment:
+      DB_HOST: db
+      DB_USER: root
+      DB_PASSWORD: isft
+      DB_DATABASE: isft
+    ports:
+      - 3000:3000
+    command: ["npm", "start"]' > docker-compose.yml
 
 echo "yml file created to setup mariadb in docker"
  
