@@ -21,12 +21,12 @@ services:
       MYSQL_DATABASE: isft
     volumes:
       - ./data:/var/lib/mysql
+    ports:
+      - 2717:2717
 
   adminer:
     image: adminer
     restart: always
-    ports:
-      - 8080:8080
 
   api:
     image: node:latest
@@ -38,7 +38,7 @@ services:
     environment:
       DB_HOST: db
       DB_USER: root
-      DB_PASSWORD: isft
+      DB_PASSWORD: a_password
       DB_DATABASE: isft
     ports:
       - 3000:3000
