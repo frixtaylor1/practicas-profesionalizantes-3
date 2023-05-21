@@ -1,7 +1,6 @@
 class Controller {
-  constructor(viewReference, ModelReference) {
+  constructor(viewReference) {
     this.innerView = viewReference;
-    this.innerModel = ModelReference;
 
     this.innerView.button0.addEventListener('click', () => { this.onButton0Click() });
     this.innerView.button1.addEventListener('click', () => { this.onButton1Click() });
@@ -83,11 +82,22 @@ class Controller {
   }
 
   onButtonClearClick() {
-    this.innerView.display.value = " ";
+    this.innerView.display.value = "";
   }
 
   onButtonCalculateClick() {
-    this.innerView.display.value = this.innerModel.evaluateExpression(this.innerView.display.value);
+    if(this.innerView.display.value != "") {
+      const url = `http://localhost:3000/modeleval?expression=${encodeURIComponent(this.innerView.display.value)}`;
+      fetch(url)
+      .then(response => response.text())
+      .then(result => {
+        this.innerView.display.value = result;
+        console.log('El resultado es:', result);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    }
   }
 }
 
