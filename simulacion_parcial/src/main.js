@@ -234,24 +234,22 @@ class TicketContent extends HTMLElement {
     this.priority   = document.createElement('p');
     this.priority.classList.add('priority');
 
-
-
     this.ticketType.innerText = `type: ${ticketTypeText}`;
     this.message.innerText    = `message: ${messageText}`;
     this.priority.innerText   = priority;
+    
+    let color = this.priority.textContent === 'highest' ? 'red' : this.priority.textContent === 'lowest' ? 'green' : 'Yellow';
+    this.priority.style = `background-color: ${color}; max-width: 300px;`;
 
     this.container.appendChild(this.ticketType);
     this.container.appendChild(this.message);
     this.container.appendChild(this.priority);
-
-    let color = this.priority.textContent === 'highest' ? 'red' : this.priority.textContent === 'lowest' ? 'green' : 'Yellow';
+    
+    let separator = document.createElement('hr');
+    this.container.appendChild(separator);
 
     let style = document.createElement('style');
-    style.innerHTML = `
-      .priority {
-        background-color: ${color};
-      }
-    `;
+
     this.appendChild(style);
 
   }
