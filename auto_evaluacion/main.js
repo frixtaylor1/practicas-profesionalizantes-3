@@ -19,7 +19,7 @@ class ButtonCustomModel {
     }
 
     increment() {
-        (this.value < 256) ? this.value += 2 : null;
+        (this.value < 254) ? this.value += 2 : null;
     }
 
     read() {
