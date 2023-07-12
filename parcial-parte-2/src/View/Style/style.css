@@ -1,0 +1,158 @@
+/* Estilos generales */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #82aeb8;
+}
+
+.form {
+    top: 50%;
+    left: 50%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f2f2f2;
+}
+
+h2 {
+    text-align: center;
+}
+
+/* Estilos para los elementos del formulario */
+input[type="text"],
+select,
+button {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="text"] {
+    color: #1a5764;
+    font-weight: bold;
+    border-color: #77bee0;
+    border-radius: 5px;
+}
+
+select {
+    width: 100%;
+    font-weight: bold;
+    color: #7ba0a8;
+}
+
+button {
+    width: 100%;
+    background-color: #a6c3d0;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #82aeb8;
+}
+
+.button-list {
+    width: 70px;
+    height: 37px;
+    margin-left: 30px;
+    background-color: #77bee0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 10px;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background-color: #f2f2f2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+ul li:hover {
+    background-color: #e6e6e6;
+}
+
+ul li button {
+    padding: 5px 10px;
+    background-color: #77bee0;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+ul li button.edit {
+    background-color: #a6c3d0;
+}
+
+ul li button.delete {
+    background-color: #f44336;
+}
+
+.edit-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+}
+
+.edit-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.edit-form input[type="text"],
+.edit-form select {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #f2f2f2;
+    border: none;
+    outline: none;
+}
+
+.edit-form select {
+    color: #1a5764;
+    font-weight: bold;
+    width: 100%;
+}
+
+.edit-form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #a6c3d0;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.edit-form button:hover {
+    background-color: #82aeb8;
+}
+
+.edit-form button.cancel {
+    background-color: #f44336;
+}
